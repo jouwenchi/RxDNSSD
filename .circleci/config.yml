@@ -30,11 +30,17 @@ jobs:
           name: Run Tests
           command: ./gradlew check
       - store_artifacts:
+          path: dnssd/build/outputs
+          destination: dnssd-outputs
+      - store_artifacts:
           path: dnssd/build/reports/
           destination: dnssd-reports
       - store_test_results:
           path: dnssd/build/test-results
           destination: dnssd-tests
+      - store_artifacts:
+          path: rxdnssd/build/outputs
+          destination: rxdnssd-outputs
       - store_artifacts:
           path: rxdnssd/build/reports/
           destination: rxdnssd-reports
@@ -42,8 +48,14 @@ jobs:
           path: rxdnssd/build/test-results
           destination: rxdnssd-tests
       - store_artifacts:
+          path: rx2dnssd/build/outputs
+          destination: rx2dnssd-outputs
+      - store_artifacts:
           path: rx2dnssd/build/reports/
           destination: rx2dnssd-reports
       - store_test_results:
           path: rx2dnssd/build/test-results
           destination: rx2dnssd-tests
+      - store_artifacts:
+          path: app/build/outputs
+          destination: app-outputs
