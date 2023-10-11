@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startBrowse() {
         Log.i("TAG", "start browse");
-        browseDisposable = rxDnssd.browse("_rxdnssd._tcp", "local.")
+        browseDisposable = rxDnssd.browse("_lwfinder._tcp", "local.")
                 .compose(rxDnssd.resolve())
                 .compose(rxDnssd.queryIPRecords())
                 .subscribeOn(Schedulers.io())
